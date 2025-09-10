@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Моё портфолио — Футуристичный стиль</title>
+  <meta name="description" content="Футуристичное портфолио разработчика с код-блоками, анимацией при скролле и фиксированным меню." />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="matrix"></canvas>
+  <div class="grain"></div>
+
+  <!-- overlay для мобильного меню -->
+  <div id="overlay" class="overlay" tabindex="-1" aria-hidden="true"></div>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="Сайдбар навигации">
+      <a href="#intro" class="logo" aria-label="Домой">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#4ee4a5"/>
+              <stop offset="1" stop-color="#7aa8ff"/>
+            </linearGradient>
+          </defs>
+          <rect x="6" y="6" width="52" height="52" rx="12" fill="url(#g1)"/>
+          <path d="M20 42 L32 18 L44 42 Z" fill="rgba(11,15,20,.9)" />
+          <circle cx="32" cy="32" r="4" fill="white" opacity=".9"/>
+        </svg>
+        <span>
+          <b>dev.viktor</b>
+          <div class="tagline">web · apps · ui</div>
+        </span>
+      </a>
+
+      <!-- hamburger -->
+      <button id="menuToggle" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+
+      <nav id="nav" role="navigation" aria-label="Основная навигация">
+        <a class="navlink" href="#intro"><span class="dot"></span><span>Вступление</span></a>
+        <a class="navlink" href="#about"><span class="dot"></span><span>Обо мне</span></a>
+        <a class="navlink" href="#skills"><span class="dot"></span><span>Навыки</span></a>
+        <a class="navlink" href="#projects"><span class="dot"></span><span>Проекты</span></a>
+        <a class="navlink" href="#contact"><span class="dot"></span><span>Контакты</span></a>
+      </nav>
+
+      <div class="tools">
+        <button id="theme" class="btn small" type="button" title="Переключить тему">🌓 Тема</button>
+      </div>
+    </aside>
+
+    <main id="main">
+      <!-- HERO -->
+      <section id="intro" class="hero reveal">
+        <div class="badge"># hello, world</div>
+        <h1 class="glitch" data-text="Я создаю быстрые и красивые сайты.">Я создаю быстрые и красивые сайты.</h1>
+        <p class="typewriter">верстка&nbsp;/&nbsp;анализ&nbsp;/&nbsp;продвижение / ...</p>
+
+        <div class="hero-grid">
+          <div class="code-card">
+            <div class="bar">
+              <div class="dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+              <div class="file">src/portfolio.js</div>
+              <div style="width:28px"></div>
+            </div>
+<!-- Подключаем Prism.js (если ещё не подключено) -->
+<link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+
+<!-- Блок "Портфолио" -->
+<div class="portfolio-code">
+  <pre><code class="language-javascript">
+// минимальная конфигурация моего стека
+export const stack = ['HTML', 'CSS', 'JavaScript']
+
+// мои услуги
+export const services = [
+  { type: 'Website', format: 'Landing' },
+  { type: 'Portfolio', format: 'Advertising' },
+  { type: 'Technical support', format: 'SEO' }
+]
+
+// контакты
+type Contact = { email: string, tg: string }
+
+export const me: Contact = {
+  email: 'f.v.filin@mail.ru', tg: '@filinvk12'
+}
+  </code></pre>
+</div>
+</div>
+
+          <div class="stats">
+            <div class="stat"><div>Производительность</div><b>95–100</b><div class="tag">Lighthouse</div></div>
+            <div class="stat"><div>Сайтов запущено</div><b>3</b><div class="tag">prod</div></div>
+            <div class="stat"><div>Средний TTFB</div><b>~80ms</b><div class="tag">edge</div></div>
+            <div class="stat"><div>Коммиты</div><b>>100</b><div class="tag">git</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="reveal">
+        <div class="section-title"><span class="badge">about.js</span>Обо мне</div>
+        <div class="code-card">
+          <div class="bar">
+            <div class="dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+            <div class="file">src/about.js</div>
+            <div style="width:28px"></div>
+          </div>
+          <!-- Подключаем Prism.js -->
+          <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+          <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-typescript.min.js"></script>
+
+          <!-- Блок "Обо мне" -->
+          <div class="about-me-code">
+      <pre><code class="language-typescript">
+
+    class Developer {
+      constructor(
+        public name: string[Viktor],
+        public role: string[Web-developer],
+        public location: string[Moscow],
+        public stack: string[HTML, CSS, JS],
+        public experience: string[2+ years],
+        public contacts: { telegram: string[@filinvik12]; email: string[f.v.filin@mail.ru] }
+      ) {}
+
+      async buildProject(type: string): Promise<string> {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(`✅ Успешно создан проект: ${type}`);
+          }, 1000);
+        });
+      }
+
+      principles() {
+        return [
+          "Писать чистый и понятный код",
+          "Думать о пользователе",
+          "Учиться новому каждый день"
+        ];
+      }
+
+      async dailyRoutine() {
+        return [
+          "☕️ Чай",
+          "💻 Код",
+          "🚀 Решение задач клиентов",
+          "📚 Изучение новых технологий"
+        ];
+      }
+
+      async dream() {
+        return "Создавать продукты, которые улучшают жизнь миллионов людей 🌍";
+      }
+    }
+
+    const me = new Developer(
+      "Viktor",
+      "Web Developer",
+      "Russia, Moscow",
+      ["HTML", "CSS", "JavaScript",],
+      "2+ года практики и десятки завершённых проектов",
+      { telegram: "@filinvk12", email: "f.v.filin@mail.ru" }
+    );
+
+    // Используем "асинхронного" Виктора 😅
+    (async () => {
+      console.log("👋 Привет! Я", me.name, "-", me.role);
+      console.log("📍 Локация:", me.location);
+      console.log("🛠️ Технологии:", me.stack.join(", "));
+      console.log("⚡️ Принципы:", me.principles().join(" | "));
+      
+      console.log(await me.buildProject("Сайт под ключ"));
+      console.log(await me.dailyRoutine());
+      console.log("🎯 Моя цель:", await me.dream());
+    })();
+      </code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="reveal">
+        <div class="section-title"><span class="badge">skills.js</span>Навыки</div>
+          <div class="skill-card">
+            <div class="bar">
+              <div class="dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+              <div class="file">src/skills.js</div>
+              <div style="width:28px"></div>
+            </div>
+          <div class="skills">
+            <div class="chip">JavaScript</div>
+            <div class="chip">HTML</div>
+            <div class="chip">CSS</div>
+            <div class="chip">WordPress</div>
+            <div class="chip">SEO</div>
+            <div class="chip">Figma→Code</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="reveal">
+        <div class="section-title"><span class="badge">projects.js</span>Проекты</div>
+        <div class="project-card">
+          <div class="bar">
+            <div class="dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+            <div class="file">src/projects.js</div>
+            <div style="width:28px"></div>
+          </div>
+        <div class="projects">
+          <div class="project" data-tilt>
+            <a class="card" href="https://kidsterritory.ru/" target="_blank" rel="noopener">
+              <div class="preview">Website</div>
+              <div class="body">
+                <b>Площадки под ключ</b>
+                <p class="muted">HTML, CSS, JavaScript</p>
+              </div>
+            </a>
+          </div>
+          <div class="project" data-tilt>
+            <a class="card" href="https://megatonexport.ru/" target="_blank" rel="noopener">
+              <div class="preview">Website</div>
+              <div class="body">
+                <b>Логистическая компания</b>
+                <p class="muted">WordPress, HTML, CSS</p>
+              </div>
+            </a>
+          </div>
+          <div class="project" data-tilt>
+            <a class="card" href="https://viktor1114.github.io/alexandra_bosco/" target="_blank" rel="noopener">
+              <div class="preview">Website</div>
+              <div class="body">
+                <b>Лендинг салона красоты</b>
+                <p class="muted">HTML, CSS, JavaScript</p>
+              </div>
+            </a>
+          </div>
+        </div>  
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="reveal">
+        <div class="section-title"><span class="badge">contacts.js</span>Контакты</div>
+        <div class="contacts-card">
+          <div class="bar">
+            <div class="dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+            <div class="file">src/contacts.js</div>
+            <div style="width:28px"></div>
+          </div>
+        <div class="contacts">
+
+          <!-- Phone -->
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.004 1.004 0 011.01-.24c1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.1.34.03.72-.24 1.01l-2.21 2.2z"/>
+            </svg>
+            <a href="tel:+79991234567">+7 (903) 009-23-99</a>
+          </div>
+
+          <!-- Email -->
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <a href="mailto:f.v.filin@mail.ru">f.v.filin@mail.ru</a>
+          </div>
+
+          <!-- Telegram -->
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M9.964 15.569l-.396 5.585c.566 0 .81-.242 1.102-.533l2.64-2.529 5.472 3.985c1.003.553 1.717.262 1.993-.925l3.612-16.868.001-.001c.32-1.49-.537-2.072-1.512-1.71L1.322 9.389c-1.447.563-1.427 1.37-.246 1.742l5.49 1.713 12.757-8.037c.601-.409 1.153-.183.701.226"/>
+            </svg>
+            <a href="https://t.me/filinvik12" target="_blank" rel="noopener">Telegram</a>
+          </div>
+
+          <!-- GitHub -->
+          <div class="contact-item">
+            <svg class="gh-inline" viewBox="0 0 24 24" width="32" height="32" role="img" xmlns="http://www.w3.org/2000/svg" aria-hidden="false">
+             <title>GitHub</title>
+              <path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577 0-.285-.01-1.04-.016-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.333-1.755-1.333-1.755-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.76-1.605-2.665-.305-5.467-1.333-5.467-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.526.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.984-.399 3.004-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.296-1.23 3.296-1.23.655 1.65.243 2.873.12 3.176.77.84 1.234 1.91 1.234 3.22 0 4.61-2.807 5.625-5.48 5.92.43.37.814 1.096.814 2.21 0 1.594-.015 2.876-.015 3.266 0 .32.216.694.825.576C20.565 21.796 24 17.296 24 12 24 5.37 18.63 0 12 0z"/>
+            </svg>
+            <a href="https://github.com/Viktor1114" target="_blank" rel="noopener">GitHub</a>
+          </div>
+
+        </div>
+        </div>
+      </section>
+
+      <section class="reveal" aria-hidden="true" style="text-align:center; background:transparent; border:0; box-shadow:none">
+        <small class="muted">© <span id="y"></span> dev.viktor — дизайн в стиле «код» + микроанимации</small>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
