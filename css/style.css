@@ -738,4 +738,11 @@ section{
     font-size: 1.2rem;
     text-decoration: none;
   }
+  .portfolio-code {
+    font-size: 11.5px;
+  }
+  .about-me-code {
+    font-size: 11.5px;
+  }
+
 }
