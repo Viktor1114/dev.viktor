@@ -33,9 +33,14 @@
 
 *{
   box-sizing: border-box;
+  max-width: 100%;
 }
 html,body{
   height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 body{
   margin: 0;
@@ -51,6 +56,10 @@ body{
 a {
   text-decoration: none;
 }
+img, video,canvas {
+  max-width: 100%;
+  height: auto;
+}
 
 /* disable scroll on mobile when menu open */
 body.menu-open{
@@ -62,7 +71,7 @@ body.menu-open{
   position: fixed;
   inset: 0;
   z-index: -2;
-  opacity:.20;
+  opacity:0.6;
   pointer-events: none;
   mix-blend-mode: lighten;
 }
@@ -273,7 +282,7 @@ section{
   width: 0; 
   animation: typing 3s steps(40, end) forwards, blink .9s step-end infinite; 
 }
-@keyframes typing{to{width: 31%}} 
+@keyframes typing{to{width: auto}} 
 @keyframes blink{50%{border-color: transparent}}
 
 .hero-grid{ 
@@ -626,13 +635,16 @@ section{
 }
 
 /* Responsive */
-@media (max-width:1100px){
-  .skills{grid-template-columns: repeat(4,1fr)}
-  .projects{grid-template-columns: repeat(2,1fr)}
+@media (max-width: 768px){
+  .project, 
+  .skills, 
+  .contacts, 
+  form, 
+  .form_row {grid-template-columns: 1fr;}
 }
-@media (max-width:860px){
+@media (max-width: 768px){
   :root{ --sidebar-w: 88px }
-  aside.sidebar{ padding:18px 10px; left:-100% } /* hide side by default on mobile */
+  aside.sidebar{ width: 100%; left:-100% } /* hide side by default on mobile */
   .logo span{display:none}
   nav .navlink{justify-content:center}
   nav .navlink span{display:none}
@@ -643,11 +655,87 @@ section{
   .menu-toggle{ display:block }
   .overlay{ display:block }
   .sidebar.open{ left: 0 } /* when open, slide in */
-  body.menu-open{ overflow:hidden } /* prevent body scroll when menu open */
+  body.menu-open{ 
+    overflow-y: auto;
+    overflow-x: hidden; 
+  } /* prevent body scroll when menu open */
 }
-@media (max-width:620px){
+@media (max-width: 768px){
   .projects{grid-template-columns: 1fr}
   .contacts{ grid-template-columns: 1fr }
   form{ grid-template-columns:1fr }
   form .row{ grid-template-columns:1fr }
+}
+/* ===== Мобильный адаптив ===== */
+@media (max-width: 768px) {
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-size: 15px; /* делаем текст больше */
+    line-height: 1.6;
+  }
+  .flex-item {
+    flex: 1 1 100%
+  }
+  * {
+    max-width: 100% !important; 
+    box-sizing: border-box;
+  }
+  img, video, canvas {
+    max-width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 768px) {
+
+  #matrix {
+    max-width: 100% !important;
+  }
+
+  pre, code {
+    font-size: 16px;
+    line-height: 1.5;
+    white-space: pre-wrap;  /* перенос строк */
+    word-break: break-word; /* перенос длинных слов */
+  }
+
+  /* бургер-кнопка */
+  .burger {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #c9d1d9;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  /* меню по умолчанию скрыто */
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #161b22;
+    padding: 2rem;
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
 }

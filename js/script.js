@@ -97,6 +97,14 @@
     }
   });
 })();
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('nav');
+
+if (burger && nav) {
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+}
 
 /* ---------- 3D tilt on project cards ---------- */
 (function(){
@@ -119,6 +127,7 @@
     });
   });
 })();
+
 
 /* ---------- Mobile menu toggle + overlay handling ---------- */
 (function(){
@@ -153,6 +162,7 @@
     if(e.key === 'Escape' && sidebar.classList.contains('open')) closeMenu();
   });
 })();
+
 
 /* ---------- Small helpers ---------- */
 document.getElementById('y').textContent = new Date().getFullYear();
