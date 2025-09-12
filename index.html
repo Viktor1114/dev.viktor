@@ -120,67 +120,67 @@ export const me: Contact = {
           <div class="about-me-code">
       <pre><code class="language-typescript">
 
-    class Developer {
-      constructor(
-        public name: string[Viktor],
-        public role: string[Web-developer],
-        public location: string[Moscow],
-        public stack: string[HTML, CSS, JS],
-        public experience: string[2+ years],
-        public contacts: { telegram: string[@filinvik12]; email: string[f.v.filin@mail.ru] }
-      ) {}
+class Developer {
+  constructor(
+    public name: string[Viktor],
+    public role: string[Web-developer],
+    public location: string[Moscow],
+    public stack: string[HTML, CSS, JS],
+    public experience: string[2+ years],
+    public contacts: { telegram: string[@filinvik12]; email: string[f.v.filin@mail.ru] }
+  ) {}
 
-      async buildProject(type: string): Promise<string> {
-        return new Promise((resolve) => {
-          setTimeout(() => {
-            resolve(`✅ Успешно создан проект: ${type}`);
-          }, 1000);
-        });
-      }
+  async buildProject(type: string): Promise<string> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(`✅ Успешно создан проект: ${type}`);
+      }, 1000);
+    });
+  }
 
-      principles() {
-        return [
-          "Писать чистый и понятный код",
-          "Думать о пользователе",
-          "Учиться новому каждый день"
-        ];
-      }
+  principles() {
+    return [
+      "Писать чистый и понятный код",
+      "Думать о пользователе",
+      "Учиться новому каждый день"
+    ];
+  }
 
-      async dailyRoutine() {
-        return [
-          "☕️ Чай",
-          "💻 Код",
-          "🚀 Решение задач клиентов",
-          "📚 Изучение новых технологий"
-        ];
-      }
+  async dailyRoutine() {
+    return [
+      "☕️ Чай",
+      "💻 Код",
+      "🚀 Решение задач клиентов",
+      "📚 Изучение новых технологий"
+    ];
+  }
 
-      async dream() {
-        return "Создавать продукты, которые улучшают жизнь миллионов людей 🌍";
-      }
-    }
+  async dream() {
+    return "Создавать продукты, которые улучшают жизнь миллионов людей 🌍";
+  }
+}
 
-    const me = new Developer(
-      "Viktor",
-      "Web Developer",
-      "Russia, Moscow",
-      ["HTML", "CSS", "JavaScript",],
-      "2+ года практики и десятки завершённых проектов",
-      { telegram: "@filinvk12", email: "f.v.filin@mail.ru" }
-    );
+const me = new Developer(
+  "Viktor",
+  "Web Developer",
+  "Russia, Moscow",
+  ["HTML", "CSS", "JavaScript",],
+  "2+ года практики и десятки завершённых проектов",
+  { telegram: "@filinvk12", email: "f.v.filin@mail.ru" }
+);
 
-    // Используем "асинхронного" Виктора 😅
-    (async () => {
-      console.log("👋 Привет! Я", me.name, "-", me.role);
-      console.log("📍 Локация:", me.location);
-      console.log("🛠️ Технологии:", me.stack.join(", "));
-      console.log("⚡️ Принципы:", me.principles().join(" | "));
-      
-      console.log(await me.buildProject("Сайт под ключ"));
-      console.log(await me.dailyRoutine());
-      console.log("🎯 Моя цель:", await me.dream());
-    })();
-      </code></pre>
+// Используем "асинхронного" Виктора 😅
+(async () => {
+  console.log("👋 Привет! Я", me.name, "-", me.role);
+  console.log("📍 Локация:", me.location);
+  console.log("🛠️ Технологии:", me.stack.join(", "));
+  console.log("⚡️ Принципы:", me.principles().join(" | "));
+  
+  console.log(await me.buildProject("Сайт под ключ"));
+  console.log(await me.dailyRoutine());
+  console.log("🎯 Моя цель:", await me.dream());
+})();
+  </code></pre>
           </div>
         </div>
       </section>
@@ -302,4 +302,5 @@ export const me: Contact = {
 
   <script src="js/script.js"></script>
 </body>
+
 </html>
