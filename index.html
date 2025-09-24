@@ -39,11 +39,11 @@
       <button id="menuToggle" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
 
       <nav id="nav" role="navigation" aria-label="Основная навигация">
-        <a class="navlink" href="#intro"><span class="dot"></span><span>Вступление</span></a>
-        <a class="navlink" href="#about"><span class="dot"></span><span>Обо мне</span></a>
-        <a class="navlink" href="#skills"><span class="dot"></span><span>Навыки</span></a>
-        <a class="navlink" href="#projects"><span class="dot"></span><span>Проекты</span></a>
-        <a class="navlink" href="#contact"><span class="dot"></span><span>Контакты</span></a>
+        <a class="navlink" href="#intro"><span class="dot"></span>Вступление</a>
+        <a class="navlink" href="#about"><span class="dot"></span>Обо мне</a>
+        <a class="navlink" href="#skills"><span class="dot"></span>Навыки</a>
+        <a class="navlink" href="#projects"><span class="dot"></span>Проекты</a>
+        <a class="navlink" href="#contact"><span class="dot"></span>Контакты</a>
       </nav>
 
       <div class="tools">
@@ -118,7 +118,7 @@ export const me: Contact = {
 
           <!-- Блок "Обо мне" -->
           <div class="about-me-code">
-      <pre><code class="language-typescript">
+  <pre><code class="language-typescript">
 
 class Developer {
   constructor(
@@ -127,13 +127,15 @@ class Developer {
     public location: string[Moscow],
     public stack: string[HTML, CSS, JS],
     public experience: string[2+ years],
-    public contacts: { telegram: string[@filinvik12]; email: string[f.v.filin@mail.ru] }
+    public contacts:
+     { telegram: string[@filinvik12] }
   ) {}
 
   async buildProject(type: string): Promise<string> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(`✅ Успешно создан проект: ${type}`);
+        resolve(`Успешно создан проект:
+        ${type}`);
       }, 1000);
     });
   }
@@ -156,7 +158,8 @@ class Developer {
   }
 
   async dream() {
-    return "Создавать продукты, которые улучшают жизнь миллионов людей 🌍";
+    return "Создавать продукты, 
+    которые улучшают жизнь миллионов людей 🌍";
   }
 }
 
@@ -165,21 +168,9 @@ const me = new Developer(
   "Web Developer",
   "Russia, Moscow",
   ["HTML", "CSS", "JavaScript",],
-  "2+ года практики и десятки завершённых проектов",
-  { telegram: "@filinvk12", email: "f.v.filin@mail.ru" }
+  "2+ года практики",
+  { telegram: "@filinvk12" }
 );
-
-// Используем "асинхронного" Виктора 😅
-(async () => {
-  console.log("👋 Привет! Я", me.name, "-", me.role);
-  console.log("📍 Локация:", me.location);
-  console.log("🛠️ Технологии:", me.stack.join(", "));
-  console.log("⚡️ Принципы:", me.principles().join(" | "));
-  
-  console.log(await me.buildProject("Сайт под ключ"));
-  console.log(await me.dailyRoutine());
-  console.log("🎯 Моя цель:", await me.dream());
-})();
   </code></pre>
           </div>
         </div>
@@ -295,12 +286,11 @@ const me = new Developer(
       </section>
 
       <section class="reveal" aria-hidden="true" style="text-align:center; background:transparent; border:0; box-shadow:none">
-        <small class="muted">© <span id="y"></span> dev.viktor — дизайн в стиле «код» + микроанимации</small>
+        <small class="muted">© <span id="y"></span> dev.viktor — современные сайты под ключ.</small>
       </section>
     </main>
   </div>
 
   <script src="js/script.js"></script>
 </body>
-
 </html>

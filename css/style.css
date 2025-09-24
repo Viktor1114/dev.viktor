@@ -134,6 +134,7 @@ aside.sidebar{
   display: none;
   background: none; 
   border: 0; 
+  right: 50%;
   color: var(--accent);
   font-size: 26px; 
   cursor: pointer; 
@@ -571,8 +572,7 @@ section{
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 .contacts{ 
-  display: grid;
-  gap: 14px; 
+  display: block;
   grid-template-columns: 1fr 1fr;
 }
 .contact-item{ 
@@ -702,7 +702,7 @@ section{
   }
 
   /* бургер-кнопка */
-  .burger {
+  .menu-toggle {
     display: block;
     position: fixed;
     top: 1rem;
@@ -730,7 +730,7 @@ section{
     z-index: 1000;
   }
 
-  nav.active {
+  nav.open {
     display: flex;
   }
 
@@ -744,5 +744,10 @@ section{
   .about-me-code {
     font-size: 11.5px;
   }
-
+  .stats, .skills {
+    display: block;
+  }
+  .chip, .stat {
+    margin-bottom: 10px;
+  }
 }

@@ -132,7 +132,7 @@ if (burger && nav) {
 /* ---------- Mobile menu toggle + overlay handling ---------- */
 (function(){
   const btn = document.getElementById('menuToggle');
-  const sidebar = document.getElementById('sidebar');
+  const sidebar = document.getElementById('nav');
   const overlay = document.getElementById('overlay');
   if(!btn , !sidebar , !overlay) return;
 
