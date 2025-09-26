@@ -751,5 +751,9 @@ section{
     margin-bottom: 10px;
   }
 
-  @keyframes typing{to{width: 88%}} 
+  .typewriter {
+    font-size: 12px;
+  }
+
+  @keyframes typing{to{width: 70%}} 
 }
