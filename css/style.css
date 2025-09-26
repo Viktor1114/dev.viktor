@@ -283,7 +283,7 @@ section{
   width: 0; 
   animation: typing 3s steps(40, end) forwards, blink .9s step-end infinite; 
 }
-@keyframes typing{to{width: auto}} 
+@keyframes typing{to{width: 42%}} 
 @keyframes blink{50%{border-color: transparent}}
 
 .hero-grid{ 
@@ -315,7 +315,17 @@ section{
   background: linear-gradient(180deg, rgba(255,255,255,.06), transparent); 
   border-bottom: 1px solid rgba(255,255,255,.08); 
 }
-
+.about-me-code {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  background: linear-gradient(180deg, rgba(255,255,255,.02), transparent 70%) , var(--bg-soft); 
+  overflow-x: auto;
+  position: relative;
+  margin: 30px 0;
+}
 
 /* Заголовок файла сверху */
 .about-me-code::before {
@@ -729,10 +739,10 @@ section{
     text-decoration: none;
   }
   .portfolio-code {
-    font-size: 11.5px;
+    font-size: 10.5px;
   }
   .about-me-code {
-    font-size: 11.5px;
+    font-size: 10.5px;
   }
   .stats, .skills {
     display: block;
@@ -740,4 +750,6 @@ section{
   .chip, .stat {
     margin-bottom: 10px;
   }
+
+  @keyframes typing{to{width: 88%}} 
 }
