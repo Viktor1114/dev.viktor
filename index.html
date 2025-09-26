@@ -134,8 +134,7 @@ class Developer {
   async buildProject(type: string): Promise<string> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(`Успешно создан проект:
-        ${type}`);
+        resolve(`Успешно создан проект: ${type}`);
       }, 1000);
     });
   }
