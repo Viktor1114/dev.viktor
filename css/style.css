@@ -315,16 +315,7 @@ section{
   background: linear-gradient(180deg, rgba(255,255,255,.06), transparent); 
   border-bottom: 1px solid rgba(255,255,255,.08); 
 }
-.about-me-code {
-  background: #1e1e1e;
-  border-radius: 8px;
-  padding: 20px;
-  font-size: 14px;
-  line-height: 1.6;
-  background: linear-gradient(180deg, rgba(255,255,255,.02), transparent 70%) , var(--bg-soft); 
-  overflow-x: auto;
-  position: relative;
-}
+
 
 /* Заголовок файла сверху */
 .about-me-code::before {
