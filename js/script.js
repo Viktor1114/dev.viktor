@@ -102,7 +102,7 @@ const nav = document.querySelector('nav');
 
 if (burger && nav) {
   burger.addEventListener('click', () => {
-    nav.classList.toggle('active');
+    nav.classList.toggle('open');
   });
 }
 
@@ -156,6 +156,16 @@ if (burger && nav) {
   });
 
   overlay.addEventListener('click', closeMenu);
+
+  nav.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+
+  const id = a.getAttribute('href').slice(1);
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  closeMenu();
+});
 
   // close on escape
   document.addEventListener('keydown', (e)=>{
